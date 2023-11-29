@@ -138,15 +138,16 @@ public class Scanner {
 
 			if (isBeginComment) {
 				commentDepth++;				
+				advance();
 			}
 
 			if (isEndComment) {
 				commentDepth--;
+				advance();
 			}
 
 			if (commentDepth < 1) {				
 				fullyEnclosed = true;
-				advance();
 			}
 
 			advance();
